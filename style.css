@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rajdhani", sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 450px;
+    height: 600px;
+}
+
+.container > img:first-child {
+    width: 100%;
+    display: block;
+}
+
+#pokemonSprite {
+    position: absolute;
+    top: 12.5rem;
+    left: 8.5rem;
+    width: 150px;
+    height: 150px;
+    image-rendering: pixelated;
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+#pokemonSprite.visible {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#pokemonInfoContainer {
+    position: absolute;
+    top: 23.3rem;
+    left: 49%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+#pokemonInfo {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 4px 8px;
+}
+
+#pokemonTypes {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.type-icon {
+    width: 24px;
+    height: 24px;
+    image-rendering: pixelated;
+    filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
+}
+
+.search {
+    position: absolute;
+    bottom: 80px;
+    left: 45.8%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0px;
+    left: 48%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 1rem;
+    border: 2px solid #555;
+    border-radius: 4px;
+    width: 200px;
+    box-shadow: inset -2px -2px 0px #999, inset 2px 2px 0px #ccc;
+    background-color: #fff;
+}
+
+button {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 12px 26px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #444;
+}
